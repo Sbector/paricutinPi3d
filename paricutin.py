@@ -14,10 +14,13 @@ CAM = RotatingCamera(5,mymouse)
 
 #Create shader
 shader = pi3d.Shader('uv_light')
-marsimg = pi3d.Texture('mars.jpg')
 
-#Create sphere
-ball = pi3d.Sphere()
+#Load textures
+diftex = pi3d.Texture("model/Paricutin_diff.jpg")
+
+#Load model
+mymodel = pi3d.Model(file_string='model/paricutin.obj', name='paricutin')
+mymodel.set_shader(shader)
 
 #Listen for keystrokes
 mykeys = pi3d.Keyboard()
@@ -31,4 +34,4 @@ while DISPLAY.loop_running():
 		DISPLAY.destroy()
 		break
 	CAM.update(mymouse)
-	ball.draw(shader, [marsimg])
+	mymodel.draw(shader, [diftex])
