@@ -35,4 +35,4 @@ while DISPLAY.loop_running():
 		DISPLAY.destroy()
 		break
 	CAM.update(mymouse)
-	mymodel.draw(shader, [diftex])
+	mymodel.draw(shader)
